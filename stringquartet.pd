@@ -1,0 +1,48 @@
+#N canvas 674 97 683 686 10;
+#X declare -lib mrpeach;
+#X obj 18 14 import mrpeach;
+#X obj 302 36 udpreceive 9001;
+#X obj 294 77 unpackOSC;
+#X text 249 30 SERVIDOR;
+#X msg 220 201 stop;
+#X msg 158 158 start;
+#X obj 328 188 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 271 190 5 0 0 0 - - -;
+#X obj 396 202 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 290 264 osc~;
+#X obj 357 266 osc~;
+#X obj 199 117 routeOSC /start /stop /violin1 /violin2 /viola /cello
+;
+#X obj 427 264 osc~;
+#X obj 494 266 osc~;
+#X obj 441 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 509 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 367 411 dac~;
+#X floatatom 320 221 5 0 0 0 - - -;
+#X floatatom 378 235 5 0 0 0 - - -;
+#X floatatom 445 230 5 0 0 0 - - -;
+#X connect 1 0 2 0;
+#X connect 2 0 11 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 1;
+#X connect 10 0 16 0;
+#X connect 11 0 5 0;
+#X connect 11 1 4 0;
+#X connect 11 2 6 0;
+#X connect 11 2 7 0;
+#X connect 11 2 9 0;
+#X connect 11 3 8 0;
+#X connect 11 3 10 0;
+#X connect 11 3 17 0;
+#X connect 11 4 14 0;
+#X connect 11 4 12 0;
+#X connect 11 4 18 0;
+#X connect 11 5 15 0;
+#X connect 11 5 13 0;
+#X connect 11 5 19 0;
+#X connect 12 0 16 1;
+#X connect 13 0 16 1;
